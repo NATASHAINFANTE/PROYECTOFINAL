@@ -1,0 +1,19 @@
+{% extends 'sasha/base.html' %}
+
+{% block contenido%}
+
+     <center> 
+        <h3>"{{object.Producto}}"</h3>
+        
+        <p><b>Detalle:</b> {{object.Detalle}}</p>
+        <p><b>Precio:</b> {{object.Precio}}</p>
+            
+        <div>
+            <img height="256" src="{{object.imagen.url}}">
+        </div>
+
+            <a href="/sasha/listar/">"VOLVER"</a>
+
+        </div>
+    </center>   
+{% endblock %}

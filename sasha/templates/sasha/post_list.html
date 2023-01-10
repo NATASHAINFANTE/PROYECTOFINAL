@@ -1,0 +1,26 @@
+{% extends 'sasha/base.html' %}
+
+{% block contenido%}
+{% if user.is_authenticated %}
+
+    <li><a href="{% url 'sasha_crear' %}">Añadir Producto</a><p></p></li>
+    <li><a href="{% url 'sasha_avatars_actualizar' user.id %}">Actualizar mi Avatar</a><p></p></li>
+    <li><a href="{% url 'sasha_users_actualizar' user.id %}">Cambiar Perfil</a><p></p></li>
+    <li><a href="{% url 'sasha_mensajes_listar' %}">Mensajes</a><p></p></li>
+
+{% endif %}
+<ul>
+{% for post in object_list %}
+    <li>
+        ---
+        {{post.Producto}}
+        {% if user.is_authenticated %}
+        <a href="{% url 'sasha_borrar' post.id %}">Borrar</a>
+        <a href="{% url 'sasha_actualizar' post.id %}">Actualizar</a>
+        {% endif %}
+        <a href="{% url 'sasha_detalle' post.id %}">Detalles</a>
+    </li>
+{% endfor %}
+</ul>
+
+{% endblock %}

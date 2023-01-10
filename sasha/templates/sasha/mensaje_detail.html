@@ -1,0 +1,21 @@
+{% extends 'sasha/base.html' %}
+
+{% block contenido%}
+
+      
+    <h3>{{object.Mensaje}}</h3>
+    <p><b>Nombre</b> {{object.nombre}}</p>    
+    <p><b>Fecha:</b> {{object.enviado_el}}</p>
+    <p><b>Email:</b> {{object.email}}</p>
+    <p><b>Mensaje:</b> {{object.texto}}</p>
+
+
+
+    <div>
+        <img height="256" src="{{object.imagen.url}}">
+    </div>
+    <div>
+        <li><a href="/sasha/listar/">Volver a lista</a></li>
+
+    </div>   
+{% endblock %}
