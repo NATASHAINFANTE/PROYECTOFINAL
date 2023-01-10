@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         
         <SCRIPT LANGUAGE="JavaScript"> 
-            var txt="Sasha Tiernos Detalles - "; 
+            var txt="Detalles Frutillitas - "; 
             var espera=500; 
             var refresco=null; 
             function rotulo_title() { 
@@ -25,29 +25,29 @@
     </head>
     <body>
         <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-light bg-danger">
             <div class="container">
                 <a class="navbar-brand" href="{% url 'sasha_index' %}">
                     <img src="{{user.avatar.imagen.url}}" height="64">
                     {%if user.is_authenticated %}
                     | Hola, {{user.first_name}} |
                     {% endif %}
-                    SASHA TIERNOS DETALLES</a>
+                    DETALLES FRUTILLITAS</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         
                         {% if user.is_authenticated %}
                             
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_listar' %}">Admin Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_miinfo' %}">Acerca de Mi</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_logout' %}">Salir</a></li>
+                            <b></b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_listar' %}">Mis Post</a></li></b>
+                            <b></b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_miinfo' %}">Acerca de Mi</a></li></b>
+                            <b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_logout' %}">Salir</a></li></b>
                             
                         {% else %}
 
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_login' %}">Ingresar</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_signup' %}">Registrarme</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'sasha_mensajes_crear' %}">Dejar Mensajes</a></li>
+                            <b></b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_login' %}">Ingresar</a></li></b>
+                            <b></b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_signup' %}">Registrarme</a></li></b>
+                            <b></b><li class="nav-item"><a class="nav-link" href="{% url 'sasha_mensajes_crear' %}">Mensajeria</a></li></b>
                             
                         {% endif %}
                     </ul>
@@ -58,7 +58,7 @@
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h3 class="fw-bolder">SASHA TIERNOS DETALLES</h3>
+                    <h3 class="fw-bolder">DETALLES FRUTILLITAS</h3>
                     <p class="lead mb-0"></p>
                 </div>
             </div>
@@ -66,8 +66,8 @@
         <!-- Page content-->
         {% block contenido%} {% endblock %}
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">PERSONALIZADOSSASHA@GMAIL.COM</p></div>
+        <footer class="py-4 bg-danger">
+            <div class="container"><p class="m-0 text-center text-white">detallesfrutillitas@gmail.com</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
